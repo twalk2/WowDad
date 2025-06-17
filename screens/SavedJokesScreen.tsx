@@ -51,10 +51,6 @@ export default function SavedJokesScreen() {
     }, [])
   );
 
-  useEffect(() => {
-    loadSavedJokes();
-  }, []);
-
   const onRefresh = async () => {
     setRefreshing(true);
     await loadSavedJokes();
