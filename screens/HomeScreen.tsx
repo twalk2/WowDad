@@ -42,6 +42,15 @@ interface OwenWilsonWow {
 
 const SAVED_JOKES_KEY = "saved_jokes";
 
+// Real fart sound URLs from SoundJay (royalty free)
+const FART_SOUNDS = [
+  "https://www.soundjay.com/human/sounds/fart-01.mp3",
+  "https://www.soundjay.com/human/sounds/fart-02.mp3",
+  "https://www.soundjay.com/human/sounds/fart-03.mp3",
+  "https://www.soundjay.com/human/sounds/fart-06.mp3",
+  "https://www.soundjay.com/human/sounds/fart-squeak-01.mp3",
+];
+
 interface HomeScreenProps {
   onJokeSaved?: () => void;
 }
@@ -158,6 +167,28 @@ export default function HomeScreen({ onJokeSaved }: HomeScreenProps) {
     }
   };
 
+  const playRandomFartSound = async () => {
+    try {
+      const randomIndex = Math.floor(Math.random() * FART_SOUNDS.length);
+      const randomFartUrl = FART_SOUNDS[randomIndex];
+
+      const { sound } = await Audio.Sound.createAsync(
+        { uri: randomFartUrl },
+        { shouldPlay: true }
+      );
+
+      // Cleanup the sound after playing
+      sound.setOnPlaybackStatusUpdate((status) => {
+        if (status.isLoaded && status.didJustFinish) {
+          sound.unloadAsync();
+        }
+      });
+    } catch (error) {
+      console.error("Error playing fart sound:", error);
+      // Fail silently - the app should continue working even if sound fails
+    }
+  };
+
   const animateButton = (animationValue: Animated.Value) => {
     Animated.sequence([
       Animated.timing(animationValue, {
@@ -176,6 +207,9 @@ export default function HomeScreen({ onJokeSaved }: HomeScreenProps) {
   const handleThumbsDown = () => {
     animateButton(buttonScaleAnimation);
     Vibration.vibrate(50);
+
+    // Play random fart sound
+    playRandomFartSound();
 
     // Animate joke exit and fetch new one
     Animated.timing(jokeAnimation, {
