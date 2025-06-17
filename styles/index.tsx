@@ -1,0 +1,186 @@
+import { StyleSheet, Dimensions } from "react-native";
+
+const { width, height } = Dimensions.get("window");
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#FFF8F0",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingHorizontal: 20,
+  },
+  header: {
+    fontSize: 32,
+    fontWeight: "bold",
+    color: "#333",
+    marginTop: 40,
+    marginBottom: 10,
+    textAlign: "center",
+  },
+  subtitle: {
+    fontSize: 16,
+    fontStyle: "italic",
+    color: "#666",
+    marginBottom: 20,
+    textAlign: "center",
+    paddingHorizontal: 20,
+  },
+  boredButton: {
+    backgroundColor: "#FF6B6B",
+    paddingVertical: 20,
+    paddingHorizontal: 40,
+    borderRadius: 16,
+    marginBottom: 30,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+    elevation: 5,
+  },
+  boredButtonText: {
+    color: "#FFF",
+    fontSize: 20,
+    fontWeight: "600",
+    textAlign: "center",
+  },
+  activityBox: {
+    backgroundColor: "#FFF",
+    borderRadius: 12,
+    padding: 24,
+    marginVertical: 20,
+    width: "100%",
+    minHeight: 140,
+    justifyContent: "center",
+    alignItems: "center",
+    borderColor: "#E0E0E0",
+    borderWidth: 1,
+  },
+  activityText: {
+    fontSize: 18,
+    color: "#444",
+    textAlign: "center",
+    fontStyle: "italic",
+  },
+  filterRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "100%",
+    marginVertical: 10,
+  },
+  filterButton: {
+    backgroundColor: "#FFD93D",
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderRadius: 12,
+    marginHorizontal: 5,
+  },
+  filterText: {
+    color: "#333",
+    fontWeight: "500",
+  },
+  ratingRow: {
+    flexDirection: "row",
+    marginTop: 10,
+    justifyContent: "space-around",
+    width: "80%",
+  },
+  ratingButton: {
+    backgroundColor: "#A0E7E5",
+    padding: 12,
+    borderRadius: 100,
+    marginHorizontal: 10,
+  },
+  ratingEmoji: {
+    fontSize: 24,
+  },
+  savedJokesInfo: {
+    marginTop: 20,
+    padding: 15,
+    backgroundColor: "#F8F9FA",
+    borderRadius: 10,
+    alignItems: "center",
+  },
+  savedJokesText: {
+    fontSize: 16,
+    color: "#666",
+    fontWeight: "500",
+  },
+  savedJokeItem: {
+    backgroundColor: "#FFF",
+    marginVertical: 8,
+    marginHorizontal: 16,
+    borderRadius: 12,
+    padding: 16,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  jokeContent: {
+    marginBottom: 12,
+  },
+  jokeNumber: {
+    fontSize: 12,
+    color: "#888",
+    fontWeight: "600",
+    marginBottom: 4,
+  },
+  savedJokeText: {
+    fontSize: 16,
+    color: "#333",
+    lineHeight: 24,
+  },
+  jokeActions: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+  },
+  actionButton: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    justifyContent: "center",
+    alignItems: "center",
+    marginHorizontal: 8,
+  },
+  jokesList: {
+    flex: 1,
+    width: "100%",
+  },
+  emptyContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  emptyState: {
+    alignItems: "center",
+    paddingHorizontal: 40,
+  },
+  emptyStateEmoji: {
+    fontSize: 64,
+    marginBottom: 16,
+  },
+  emptyStateTitle: {
+    fontSize: 24,
+    fontWeight: "600",
+    color: "#333",
+    marginBottom: 8,
+    textAlign: "center",
+  },
+  emptyStateText: {
+    fontSize: 16,
+    color: "#666",
+    textAlign: "center",
+    lineHeight: 24,
+  },
+  savedJokesCounter: {
+    fontSize: 14,
+    color: "#888",
+    marginBottom: 16,
+    textAlign: "center",
+  },
+});
+
+export default styles;
