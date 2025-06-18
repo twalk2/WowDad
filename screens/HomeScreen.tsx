@@ -305,32 +305,37 @@ export default function HomeScreen({ onJokeSaved }: HomeScreenProps) {
       {renderJokeContent()}
 
       {currentJoke && (
-        <View style={styles.ratingRow}>
-          <Animated.View
-            style={{ transform: [{ scale: buttonScaleAnimation }] }}
-          >
-            <TouchableOpacity
-              style={[styles.ratingButton, { backgroundColor: "#FF4757" }]}
-              onPress={handleThumbsDown}
+        <>
+          <Text style={styles.ratingHeader}>Rate the Joke</Text>
+          <View style={styles.ratingRow}>
+            <Animated.View
+              style={{ transform: [{ scale: buttonScaleAnimation }] }}
             >
-              <MaterialIcons name="thumb-down" size={32} color="#FFF" />
-            </TouchableOpacity>
-          </Animated.View>
+              <TouchableOpacity
+                style={[styles.ratingButton, { backgroundColor: "#FF4757" }]}
+                onPress={handleThumbsDown}
+              >
+                <MaterialIcons name="thumb-down" size={32} color="#FFF" />
+              </TouchableOpacity>
+            </Animated.View>
 
-          <Animated.View style={{ transform: [{ scale: wowButtonAnimation }] }}>
-            <TouchableOpacity
-              style={[styles.ratingButton, { backgroundColor: "#2ED573" }]}
-              onPress={handleWowPress}
-              disabled={audioLoading}
+            <Animated.View
+              style={{ transform: [{ scale: wowButtonAnimation }] }}
             >
-              {audioLoading ? (
-                <ActivityIndicator size="small" color="#FFF" />
-              ) : (
-                <Text style={styles.ratingEmoji}>🤩</Text>
-              )}
-            </TouchableOpacity>
-          </Animated.View>
-        </View>
+              <TouchableOpacity
+                style={[styles.ratingButton, { backgroundColor: "#2ED573" }]}
+                onPress={handleWowPress}
+                disabled={audioLoading}
+              >
+                {audioLoading ? (
+                  <ActivityIndicator size="small" color="#FFF" />
+                ) : (
+                  <Text style={styles.ratingEmoji}>🤩</Text>
+                )}
+              </TouchableOpacity>
+            </Animated.View>
+          </View>
+        </>
       )}
 
       <View style={styles.savedJokesInfo}>

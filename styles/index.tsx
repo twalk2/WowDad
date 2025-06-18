@@ -79,6 +79,14 @@ const styles = StyleSheet.create({
     color: "#333",
     fontWeight: "500",
   },
+  ratingHeader: {
+    fontSize: 18,
+    fontWeight: "600",
+    color: "#333",
+    marginTop: 15,
+    marginBottom: 5,
+    textAlign: "center",
+  },
   ratingRow: {
     flexDirection: "row",
     marginTop: 10,
